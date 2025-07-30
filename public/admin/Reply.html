@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="assets/dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="assets/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="">
+    <title>Admin Group 2</title>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><b>Gr</b>2</span>
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg"><b>Group</b>2</span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+          <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+      
+          
+        </nav>
+    </header>
+
+      
+
+
+<!-- Left side column. contains the sidebar -->
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>Group 2</p>
+          
+        </div>
+        <div class="pull-left info">
+          <div style="text-align: center;">
+          <a href="" style="display: inline-block;">Đăng xuất</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- /.search form -->
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu">
+        <li>
+            <a href="dashboard.html">
+              <i class="fa fa-th"></i> <span>Dashboard</span>
+            </a>
+          </li>
+    
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-th"></i> <span>User</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="http://127.0.0.1:5502/admin/Users.html"><i class="fa fa-circle-o"></i> Liet ke</a></li>
+              <li><a href=""><i class="fa fa-circle-o"></i> Them</a></li>
+            </ul>
+          </li>
+          
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-th"></i> <span>Post</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="http://127.0.0.1:5502/admin/Posts.html"><i class="fa fa-circle-o"></i> Liet ke</a></li>
+              <li><a href=""><i class="fa fa-circle-o"></i> Them</a></li>
+              
+            </ul>
+          </li>
+    
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-th"></i> <span>Reply</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="http://127.0.0.1:5502/admin/Reply.html"><i class="fa fa-circle-o"></i> Liet ke</a></li>
+            </ul>
+          </li>
+    
+          
+          
+          
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+    <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header" style="text-align: center;">
+      <h1>Welcom To Admin Group 2 </h1>
+     
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="box" >
+        <div class="box-body" >
+          <h1>Reply Management</h1>
+          <!-- Modal Chỉnh Sửa Phản Hồi -->
+              <div id="editReplyModal" style="display:none;">
+                <h2>Chỉnh sửa Phản hồi</h2>
+                <form id="updateReplyForm">
+                    <input type="hidden" id="replyId">
+                    <div>
+                        <label for="replyPostId">Post ID:</label>
+                        <input type="number" id="replyPostId" required>
+                    </div>
+                    <div>
+                        <label for="replyUserId">User ID:</label>
+                        <input type="number" id="replyUserId" required>
+                    </div>
+                    <div>
+                        <label for="replyContent">Nội dung:</label>
+                        <textarea id="replyContent" required></textarea>
+                    </div>
+                    <button type="submit">Cập nhật Phản hồi</button>
+                    <button type="button" onclick="closeModal()">Hủy</button>
+                </form>
+              </div>
+          <table class="table table-hover" width="100%">
+              <thead>
+                  <tr>
+                      <th>Reply ID</th>
+                      <th>Post ID</th>
+                      <th>User ID</th>
+                      <th>Content</th>
+                      <th>Date</th>
+                      <th>Target Reply ID</th>
+                      <th>Actions</th>
+                  </tr>
+              </thead>
+              <tbody id="replyData">
+                  <!-- Reply rows will be inserted here -->
+              </tbody>
+          </table>
+
+
+        </div>
+        
+        
+      </div>
+      <!-- /.box -->
+
+    </section>
+    <!-- /.content -->
+  </div>
+
+  
+  
+  
+</div>
+<!-- ./wrapper -->
+
+<script>
+  
+  async function deleteReply(replyId) {
+      if (confirm('Are you sure you want to delete this reply?')) {
+          try {
+              const response = await fetch(`http://localhost:5502/replies/${replyId}`, {
+                  method: 'DELETE',
+              });
+              
+              if (response.ok) {
+                  alert('Reply deleted successfully!');
+                  getReplies(); // Refresh the reply list
+              } else {
+                  alert('Failed to delete reply.');
+              }
+          } catch (error) {
+              console.error('Error deleting reply:', error);
+          }
+      }
+  }
+  
+  async function getReplies() {
+    try {
+        const response = await fetch('http://localhost:5502/replies'); // Endpoint API
+        const replies = await response.json();
+
+        const replyTableBody = document.getElementById('replyData');
+        replyTableBody.innerHTML = ''; // Xóa dữ liệu hiện có
+
+        replies.forEach(reply => {
+            const row = document.createElement('tr'); // Tạo hàng mới
+            row.style.textAlign = 'center'; // Canh giữa văn bản
+            row.innerHTML = `
+                <td>${reply.reply_id}</td>
+                <td>${reply.post_id}</td>
+                <td>${reply.user_id}</td>
+                <td>${reply.reply_content}</td>
+                <td>${new Date(reply.reply_date).toLocaleString()}</td>
+                <td>${reply.reply_target_id || '-'}</td>
+                <td>
+                    <button onclick="editReply(${reply.reply_id})">Chỉnh sửa</button>
+                    <button onclick="deleteReply(${reply.reply_id})">Xóa</button>
+                </td>
+            `;
+            replyTableBody.appendChild(row); // Thêm hàng mới vào bảng
+        });
+    } catch (error) {
+        console.error('Lỗi khi lấy dữ liệu phản hồi:', error);
+    }
+}
+
+async function editReply(replyId) {
+    try {
+        const response = await fetch(`http://localhost:5502/replies/${replyId}`);
+
+        if (!response.ok) {
+            const errorMessage = await response.text();
+            console.error('Lỗi khi lấy dữ liệu phản hồi:', errorMessage);
+            alert('Có lỗi xảy ra khi lấy dữ liệu. Vui lòng kiểm tra console.');
+            return;
+        }
+
+        const reply = await response.json();
+
+        // Điền dữ liệu vào biểu mẫu chỉnh sửa, đảm bảo các ID là số
+        document.getElementById('replyId').value = reply.reply_id;
+        document.getElementById('replyPostId').value = reply.post_id;
+        document.getElementById('replyUserId').value = reply.user_id;
+        document.getElementById('replyContent').value = reply.reply_content;
+
+        // Mở modal
+        document.getElementById('editReplyModal').style.display = 'block';
+    } catch (error) {
+        console.error('Error fetching post data for edit:', error);
+    }
+}
+
+document.getElementById('updateReplyForm').onsubmit = async function(event) {
+    event.preventDefault(); // Ngăn chặn việc gửi biểu mẫu mặc định
+    const replyId = Number(document.getElementById('replyId').value); // Chuyển đổi thành số
+    const postId = Number(document.getElementById('replyPostId').value); // Chuyển đổi thành số
+    const userId = Number(document.getElementById('replyUserId').value); // Chuyển đổi thành số
+
+    const replyData = {
+        post_id: postId,
+        user_id: userId,
+        reply_content: document.getElementById('replyContent').value,
+        reply_date: new Date().toISOString() // Đặt ngày hiện tại
+    };
+
+    // Ghi lại dữ liệu phản hồi trước khi gửi
+    console.log('Dữ liệu phản hồi sẽ được gửi:', replyData);
+
+    try {
+        const response = await fetch(`http://localhost:5502/replies/${replyId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(replyData)
+        });
+
+        if (response.ok) {
+            alert('Phản hồi đã được cập nhật thành công!');
+            closeModal(); // Hàm để đóng modal
+            getReplies(); // Làm mới danh sách phản hồi
+        } else {
+          console.error('Error updating reply:', error); // Lấy thông báo lỗi từ phản hồi
+            alert(`Cập nhật phản hồi không thành công: ${errorMessage}`);
+        }
+    } catch (error) {
+        console.error('Lỗi khi cập nhật phản hồi:', error);
+        alert('Đã xảy ra lỗi không mong muốn. Vui lòng kiểm tra console để biết chi tiết.');
+    }
+};
+
+
+// Hàm để đóng modal
+function closeModal() {
+    document.getElementById('editReplyModal').style.display = 'none';
+}
+
+// Gọi hàm khi cửa sổ được tải
+window.onload = getReplies;
+  </script>
+ 
+<!-- jQuery 2.2.0 -->
+<script src="assets/plugins/jQuery/jQuery-2.2.0.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="assets/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="assets/plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="assets/dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="assets/dist/js/demo.js"></script>
+
+
+
+  
+</div> 
+</body>
+</html>  
+
+

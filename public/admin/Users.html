@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="assets/dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="assets/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="">
+    <title>Admin Group 2</title>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><b>Gr</b>2</span>
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg"><b>Group</b>2</span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+          <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+      
+          
+        </nav>
+    </header>
+
+      
+
+
+<!-- Left side column. contains the sidebar -->
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>Group 2</p>
+          
+        </div>
+        <div class="pull-left info">
+          <div style="text-align: center;">
+          <a href="" style="display: inline-block;">Đăng xuất</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- /.search form -->
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu">
+        <li>
+            <a href="dashboard.html">
+              <i class="fa fa-th"></i> <span>Dashboard</span>
+            </a>
+          </li>
+    
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-th"></i> <span>User</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="http://127.0.0.1:5502/admin/Users.html"><i class="fa fa-circle-o"></i> Liet ke</a></li>
+              <li><a href=""><i class="fa fa-circle-o"></i> Them</a></li>
+            </ul>
+          </li>
+          
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-th"></i> <span>Post</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="http://127.0.0.1:5502/admin/Posts.html"><i class="fa fa-circle-o"></i> Liet ke</a></li>
+              <li><a href=""><i class="fa fa-circle-o"></i> Them</a></li>
+              
+            </ul>
+          </li>
+    
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-th"></i> <span>Reply</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="http://127.0.0.1:5502/admin/Reply.html"><i class="fa fa-circle-o"></i> Liet ke</a></li>
+            </ul>
+          </li>
+    
+          
+          
+          
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+    <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header" style="text-align: center;">
+      <h1>Welcom To Admin Group 2 </h1>
+     
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="box">
+        <div class="box-body">
+            
+<p style="font-weight: bold;" class="titledanhmuc">Liệt kê sản phẩm</p>
+    <div class="container mt-4">
+        <h1>User Management</h1>
+        <!-- Update User Modal -->
+        <!-- Update User Modal -->
+<div id="updateUserModal" style="display:none;">
+  <h2>Update User</h2>
+  <form id="updateUserForm">
+      <input type="hidden" id="userId" name="userId">
+      <div>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+      </div>
+      <div>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password">
+      </div>
+      <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+          <label for="contact_details">Contact Details:</label>
+          <input type="text" id="contact_details" name="contact_details">
+      </div>
+      <div>
+          <label for="personal_info">Personal Info:</label>
+          <input type="text" id="personal_info" name="personal_info">
+      </div>
+      <div>
+          <label for="professional_info">Professional Info:</label>
+          <input type="text" id="professional_info" name="professional_info">
+      </div>
+      <div>
+          <label for="qualifications">Qualifications:</label>
+          <input type="text" id="qualifications" name="qualifications">
+      </div>
+      <div>
+          <label for="experience">Experience:</label>
+          <input type="text" id="experience" name="experience">
+      </div>
+      <div>
+          <label for="achievement">Achievements:</label>
+          <input type="text" id="achievement" name="achievement">
+      </div>
+      <div>
+          <label for="profile_visibility">Visibility:</label>
+          <select id="profile_visibility" name="profile_visibility">
+              <option value="public">Public</option>
+              <option value="private">Private</option>
+          </select>
+      </div>
+      <div>
+          <label for="logged_in">Logged In:</label>
+          <input type="checkbox" id="logged_in" name="logged_in">
+      </div>
+      <button type="submit">Update User</button>
+      <button type="button" onclick="closeModal()">Cancel</button>
+  </form>
+</div>
+        <table class="table table-hover" width="100%">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Email</th>
+                    <th>Contact Details</th>
+                    <th>Personal Info</th>
+                    <th>Professional Info</th>
+                    <th>Qualifications</th>
+                    <th>Experience</th>
+                    <th>Achievements</th>
+                    <th>Visibility</th>
+                    <th>Logged In</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="userData">
+                <!-- User rows will be inserted here -->
+            </tbody>
+        </table>
+
+    </div>
+
+    <script>
+      //Liet ke
+        async function getUsers() {
+      try {
+          const response = await fetch('http://localhost:5502/users'); // Địa chỉ API
+          const users = await response.json();
+          
+          const userTableBody = document.getElementById('userData');
+          userTableBody.innerHTML = ''; // Xóa dữ liệu cũ
+          
+          users.forEach(user => {
+              const row = document.createElement('tr'); // Tạo hàng mới
+              row.style.textAlign = 'center'; // Canh giữa văn bản
+              row.innerHTML = `
+                  <td>${user.user_id}</td>
+                  <td>${user.username}</td>
+                  <td>${user.password}</td>
+                  <td>${user.email}</td>
+                  <td>${user.contact_details || ''}</td>
+                  <td>${user.personal_info || ''}</td>
+                  <td>${user.professional_info || ''}</td>
+                  <td>${user.qualifications || ''}</td>
+                  <td>${user.experience || ''}</td>
+                  <td>${user.achievement || ''}</td>
+                  <td>${user.profile_visibility || 'public'}</td>
+                  <td>${user.logged_in ? 'Yes' : 'No'}</td>
+                  <td>
+                      <button onclick="deleteUser(${user.user_id})">Xóa</button>
+                      <button onclick="editUser(${user.user_id})">Sửa</button>
+                  </td>
+              `;
+              userTableBody.appendChild(row); // Thêm hàng mới vào bảng
+          });
+      } catch (error) {
+          console.error('Error fetching users:', error);
+      }
+  }
+      
+      //Xoa
+      // Close the modal function
+    function closeModal() {
+        document.getElementById('updateUserModal').style.display = 'none';
+    }
+      async function deleteUser(userId) {
+          if (confirm('Are you sure you want to delete this user?')) {
+              try {
+                  const response = await fetch(`http://localhost:5502/users/${userId}`, {
+                      method: 'DELETE',
+                  });
+                  
+                  if (response.ok) {
+                      alert('User deleted successfully!');
+                      getUsers(); // Refresh the user list
+                  } else {
+                      alert('Failed to delete user.');
+                  }
+              } catch (error) {
+                  console.error('Error deleting user:', error);
+              }
+          }
+      }
+  
+      window.onload = getUsers; // Call the function when the window loads
+
+      //Sua
+      async function editUser(userId) {
+    try {
+        const response = await fetch(`http://localhost:5502/users/${userId}`);
+        const user = await response.json();
+
+        // Populate the form fields with user data
+        document.getElementById('userId').value = user.user_id;
+        document.getElementById('username').value = user.username;
+        document.getElementById('password').value = user.password; 
+        document.getElementById('email').value = user.email;
+        document.getElementById('contact_details').value = user.contact_details || '';
+        document.getElementById('personal_info').value = user.personal_info || '';
+        document.getElementById('professional_info').value = user.professional_info || '';
+        document.getElementById('qualifications').value = user.qualifications || '';
+        document.getElementById('experience').value = user.experience || '';
+        document.getElementById('achievement').value = user.achievement || '';
+        document.getElementById('profile_visibility').value = user.profile_visibility || 'public';
+        document.getElementById('logged_in').checked = user.logged_in || false;
+
+        // Show the modal
+        document.getElementById('updateUserModal').style.display = 'block';
+    } catch (error) {
+        console.error('Error fetching user data for edit:', error);
+    }
+}
+document.getElementById('updateUserForm').onsubmit = async function(event) {
+    event.preventDefault(); // Ngăn chặn việc gửi biểu mẫu mặc định
+    const userId = Number(document.getElementById('userId').value); // Chuyển đổi thành số
+
+    const userData = {
+        username: document.getElementById('username').value,
+        password: document.getElementById('password').value,
+        email: document.getElementById('email').value,
+        contact_details: document.getElementById('contact_details').value,
+        personal_info: document.getElementById('personal_info').value,
+        professional_info: document.getElementById('professional_info').value,
+        qualifications: document.getElementById('qualifications').value,
+        experience: Number(document.getElementById('experience').value) || 0, // Chuyển đổi thành số
+        achievement: document.getElementById('achievement').value,
+        profile_visibility: document.getElementById('profile_visibility').value,
+        logged_in: document.getElementById('logged_in').checked ? 1 : 0 // Chuyển đổi thành 1 hoặc 0
+    };
+
+    // Ghi lại dữ liệu người dùng trước khi gửi
+    console.log('User Data to be sent:', userData);
+
+    try {
+        const response = await fetch(`http://localhost:5502/users/${userId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+        });
+
+        if (response.ok) {
+            alert('User updated successfully!');
+            closeModal();
+            getUsers(); // Làm mới danh sách người dùng
+        } else {
+            const errorMessage = await response.text(); // Lấy thông báo lỗi từ phản hồi
+            alert(`Failed to update user: ${errorMessage}`);
+        }
+    } catch (error) {
+        console.error('Error updating user:', error);
+        alert('An unexpected error occurred. Check the console for details.');
+    }
+};
+    
+  </script>
+
+        </div>
+        
+        
+      </div>
+      <!-- /.box -->
+
+    </section>
+    <!-- /.content -->
+  </div>
+
+  
+  
+  
+</div>
+<!-- ./wrapper -->
+ 
+<!-- jQuery 2.2.0 -->
+<script src="assets/plugins/jQuery/jQuery-2.2.0.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<!-- SlimScroll -->
+<script src="assets/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="assets/plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="assets/dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="assets/dist/js/demo.js"></script>
+
+  
+</div> 
+</body>
+</html>  
+
+
