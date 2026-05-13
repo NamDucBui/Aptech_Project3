@@ -6,7 +6,7 @@ const postRoutes = require('./routes/postRoutes'); // Nhập tệp postRoutes
 const replyRoutes = require('./routes/replyRoutes'); 
 
 const app = express();
-const port = 5504;
+const port = 5505;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
